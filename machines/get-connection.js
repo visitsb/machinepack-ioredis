@@ -85,7 +85,7 @@ module.exports = {
   //
   fn: function (inputs, exits){
     var _ = require('@sailshq/lodash');
-    var redis = require('redis');
+    var redis = require('ioredis');
     var flaverr = require('flaverr');
 
     // Build a local variable (`redisClientOptions`) to house a dictionary
@@ -103,7 +103,7 @@ module.exports = {
     var client;
     try {
 
-      client = redis.createClient(inputs.manager.connectionString, redisClientOptions);
+      client = new redis(inputs.manager.connectionString, redisClientOptions);
     } catch (e) {
       // If a "TypeError" was thrown, it means something was wrong with
       // one of the provided client options.  We assume the issue was with

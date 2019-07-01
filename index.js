@@ -9,4 +9,4 @@ module.exports = require('machine').pack({
 //... well except for this.
 // Also give the driver a `redis` property, so that it provides access
 // to the static Redis client library for Node.js. (See http://npmjs.com/package/redis)
-module.exports.redis = require('redis');
+module.exports.redis = require('ioredis');

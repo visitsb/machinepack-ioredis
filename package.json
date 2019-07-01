@@ -21,6 +21,10 @@
     {
       "name": "Luis Lobo Borobia",
       "email": "luislobo@gmail.com"
+    },
+    {
+      "name": "Shanti Naik",
+      "email": "visitsb@gmail.com"
     }
   ],
   "license": "MIT",
@@ -28,8 +32,8 @@
     "@sailshq/lodash": "^3.10.2",
     "async": "2.0.1",
     "flaverr": "^1.9.2",
-    "machine": "^15.2.2",
-    "redis": "2.8.0"
+    "ioredis": "^4.10.0",
+    "machine": "^15.2.2"
   },
   "devDependencies": {
     "eslint": "4.11.0",

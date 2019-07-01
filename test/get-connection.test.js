@@ -42,8 +42,8 @@ describe('getConnection()', () => {
       Pack.createManager({
         connectionString: 'redis://127.0.0.1:9999',
         meta: {
-          connect_timeout: 1000,//eslint-disable-line camelcase
-          retry_strategy: function (){//eslint-disable-line camelcase
+          connectTimeout: 1000,//eslint-disable-line camelcase
+          retryStrategy: function (){//eslint-disable-line camelcase
             return null;
           }
         }
