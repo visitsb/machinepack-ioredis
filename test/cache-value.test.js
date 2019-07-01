@@ -13,8 +13,7 @@ var shouldProperlyStoreValue = require('./helpers/should-properly-store-value.te
  */
 
 describe('cacheValue()', () => {
-
-// Used to hold manager and active connection throughout the tests below.
+  // Used to hold manager and active connection throughout the tests below.
   var manager;
   var connection;
   // The keys to use during tests. Prefixed with `machinepack-redis.` so that
@@ -243,7 +242,7 @@ describe('cacheValue()', () => {
               notFound: function (){
                 return done(new Error('Expecting `succeess` exit'));
               },
-              success: function (value){
+              success: function (/*value*/){
                 // now check that it expired, after 1.5 secs
                 setTimeout(() => {
                   Pack.getCachedValue({
@@ -257,7 +256,7 @@ describe('cacheValue()', () => {
                     notFound: function (){
                       return done();
                     },
-                    success: function (value){
+                    success: function (/*value*/){
                       return done(new Error('Expecting `notFound` exit'));
                     }
                   });
@@ -286,6 +285,7 @@ describe('cacheValue()', () => {
         if (err) {
           console.error('ERROR: Could not destroy keys in test cleanup.  Details:\n', err);
         }
+
         Pack.destroyManager({
           manager: manager
         }).exec(done);

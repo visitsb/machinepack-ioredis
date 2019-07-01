@@ -27,7 +27,7 @@ module.exports = function shouldProperlyStoreValue (opts, done){
     ttl: opts.ttl
   }).switch({
     error: done,
-    success: function (report){
+    success: function (/*report*/){
       Pack.getCachedValue({
         connection: opts.connection,
         key: opts.key

@@ -4,8 +4,6 @@
 
 var assert = require('assert');
 var Pack = require('../');
-var shouldProperlyStoreValue = require('./helpers/should-properly-store-value.test-helper');
-
 
 /**
  * Note: These tests should ideally not be redis-specific.

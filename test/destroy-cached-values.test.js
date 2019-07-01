@@ -149,10 +149,10 @@ describe('destroyCachedValues()', () => {
         error: function (unusedErr){
           return done();
         },
-        invalidKeys: function (report) { return done(new Error('Expecting `error` exit')); },
-        failed:  function (report) { return done(new Error('Expecting `error` exit')); },
-        badConnection:  function (report) { return done(new Error('Expecting `error` exit')); },
-        success: function (report){ return done(new Error('Expecting `error` exit')); }
+        invalidKeys: function (/*report*/) { return done(new Error('Expecting `error` exit')); },
+        failed:  function (/*report*/) { return done(new Error('Expecting `error` exit')); },
+        badConnection:  function (/*report*/) { return done(new Error('Expecting `error` exit')); },
+        success: function (/*report*/){ return done(new Error('Expecting `error` exit')); }
 
       });
 
@@ -167,10 +167,10 @@ describe('destroyCachedValues()', () => {
         error: function (unusedErr){
           return done();
         },
-        invalidKeys: function (report) { return done(new Error('Expecting `error` exit')); },
-        failed:  function (report) { return done(new Error('Expecting `error` exit')); },
-        badConnection:  function (report) { return done(new Error('Expecting `error` exit')); },
-        success: function (report){ return done(new Error('Expecting `error` exit')); }
+        invalidKeys: function (/*report*/) { return done(new Error('Expecting `error` exit')); },
+        failed:  function (/*report*/) { return done(new Error('Expecting `error` exit')); },
+        badConnection:  function (/*report*/) { return done(new Error('Expecting `error` exit')); },
+        success: function (/*report*/){ return done(new Error('Expecting `error` exit')); }
       });
 
     });//</it should fail when passed a number>
@@ -184,10 +184,10 @@ describe('destroyCachedValues()', () => {
         error: function (unusedErr){
           return done();
         },
-        invalidKeys: function (report) { return done(new Error('Expecting `error` exit')); },
-        failed:  function (report) { return done(new Error('Expecting `error` exit')); },
-        badConnection:  function (report) { return done(new Error('Expecting `error` exit')); },
-        success: function (report){ return done(new Error('Expecting `error` exit')); }
+        invalidKeys: function (/*report*/) { return done(new Error('Expecting `error` exit')); },
+        failed:  function (/*report*/) { return done(new Error('Expecting `error` exit')); },
+        badConnection:  function (/*report*/) { return done(new Error('Expecting `error` exit')); },
+        success: function (/*report*/){ return done(new Error('Expecting `error` exit')); }
       });
 
     });//</it should fail when passed a dictionary>
@@ -210,6 +210,7 @@ describe('destroyCachedValues()', () => {
       if (err) {
         console.error('ERROR: Could not destroy keys in test cleanup.  Details:\n', err);
       }
+
       Pack.destroyManager({
         manager: manager
       }).exec(done);

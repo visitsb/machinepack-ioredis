@@ -170,6 +170,7 @@ describe('getCachedValue()', () => {
         if (err) {
           console.error('ERROR: Could not destroy keys in test cleanup.  Details:\n', err);
         }
+
         Pack.destroyManager({
           manager: manager
         }).exec(done);
