@@ -3,7 +3,7 @@
 
 Structured Node.js bindings for Redis with support for `await` using ioredis. This is a fork of existing [machinepack-redis](https://github.com/sailshq/machinepack-redis) that substitutes [redis](https://www.npmjs.com/package/redis) client with [ioredis](https://www.npmjs.com/package/ioredis).
 
-> Wait!  You might not want to use machinepack-ioredis in your app!  This package contains relatively low-level functionality, and it is designed to provide building blocks for packages that expose higher-level abstractions.  **To use Redis for implementing caching in your Sails app, please use [sails-ioredis](https://npmjs.com/package/sails-ioredis) instead of this package.**
+> Wait!  You might not want to use machinepack-ioredis in your app!  This package contains relatively low-level functionality, and it is designed to provide building blocks for packages that expose higher-level abstractions.  **To use Redis for implementing caching in your Sails app, please use [sails-ioredis2](https://npmjs.com/package/sails-ioredis2) instead of this package.**
 
 ## Help &nbsp; [![Gitter chat](https://badges.gitter.im/JoinChat.svg)](https://gitter.im/balderdashy/sails)
 
