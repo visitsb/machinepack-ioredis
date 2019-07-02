@@ -25,7 +25,7 @@ module.exports = {
     connectionString: {
       description: 'A string containing all metadata and credentials necessary for connecting to the Redis database.',
       example: 'redis://:secret@127.0.0.1:6379/12',
-      required: true
+      required: false
     },
     //
     onUnexpectedFailure: {
@@ -73,7 +73,7 @@ module.exports = {
     },
     //
     malformed: {
-      description: 'The provided connection string is not valid for MySQL.',
+      description: 'The provided connection string is not valid for Redis.',
       outputFriendlyName: 'Report',
       outputDescription: 'The `error` property is a JavaScript Error instance explaining that (and preferably "why") the provided connection string is invalid.  The `meta` property is reserved for custom driver-specific extensions.',
       outputExample: {
@@ -120,6 +120,11 @@ module.exports = {
       if (!_.isObject(inputs.meta) || _.isFunction(inputs.meta)) {
         return exits.error('If provided, `meta` must be a dictionary.');
       }
+    }
+
+    if(!_.isString(inputs.connectionString)) {
+      var _defaults= _.assign({host: 'localhost', port: 6379, db: 0}, inputs.meta);
+      inputs.connectionString= 'redis://'+ _defaults.host+ ':'+ _defaults.port+ '/'+ _defaults.db;
     }
 
     // Validate connection string (call `malformed` if invalid).

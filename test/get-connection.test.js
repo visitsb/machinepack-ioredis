@@ -36,6 +36,29 @@ describe('getConnection()', () => {
       });
     }); //</should connect with a password>
 
+    it('should connect with options instead of url', (done) => {
+      Pack.createManager({
+        meta: {
+          host: '127.0.0.1',
+          port: 6379
+        }
+      }).switch({
+        error: done,
+        success: function (result){
+          // Save reference to manager.
+          var manager = result.manager;
+          Pack.getConnection({
+            manager: manager
+          }).switch({
+            error: done,
+            success: function (){
+              done();
+            }
+          });
+        }
+      });
+    }); //</should connect with options instead of url>
+
     it('should fail to connect to an invalid port', (done) => {
       Pack.createManager({
         connectionString: 'redis://127.0.0.1:9999',
